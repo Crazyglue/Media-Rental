@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" minWidth="400.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment7.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Browse Collection">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Accordion fx:id="accordionWrapper" prefHeight="575.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <panes>
+                            <TitledPane fx:id="addMediaTitledPane" animated="false" text="Add Media">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <GridPane hgap="10.0" minHeight="400.0" minWidth="400.0" prefHeight="450.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                                <RowConstraints minHeight="150.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="30.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <TextField fx:id="searchLibraryTextField" alignment="CENTER_RIGHT" maxWidth="-Infinity" prefWidth="225.0" GridPane.halignment="RIGHT" />
+                                                <Button fx:id="searchLibrarySearchButton" mnemonicParsing="false" onAction="#searchLibrarySearchButtonListener" text="Search" GridPane.columnIndex="1" />
+                                                <ListView fx:id="searchLibraryResultsListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </ListView>
+                                                <ListView fx:id="searchLibraryOrderListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </ListView>
+                                                <Button fx:id="searchLibraryAddButton" mnemonicParsing="false" onAction="#searchLibraryAddButtonListener" prefWidth="50.0" text="Add" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                                <Button fx:id="searchLibraryNextButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#searchLibraryNextButtonListener" prefWidth="50.0" text="Next" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                                                <Button fx:id="searchLibraryRemoveButton" mnemonicParsing="false" onAction="#searchLibraryRemoveButtonListener" text="Remove" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin>
+                                                </Button>
+                                                <RadioButton fx:id="addMediaMusicRadioButton" mnemonicParsing="false" text="Music" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="addMediaRadioGroup" />
+                                                   </toggleGroup>
+                                                </RadioButton>
+                                                <RadioButton fx:id="addMediaMovieRadioButton" mnemonicParsing="false" text="Movies" toggleGroup="$addMediaRadioGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="customerInformationTitledPane" animated="false" text="Customer Information">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="550.0" text="Customer Information" textAlignment="CENTER" underline="true">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label text="Name">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <TextField fx:id="renterInfoNameTextField" maxWidth="250.0" prefWidth="250.0" VBox.vgrow="NEVER" />
+                                                <Label text="Password">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="renterInfoPasswordTextField" maxWidth="250.0" prefWidth="250.0" />
+                                                <Group>
+                                                   <children>
+                                                      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="250.0" spacing="20.0">
+                                                         <children>
+                                                            <RadioButton fx:id="renterInfoExistingCustomerRadioButton" mnemonicParsing="false" onAction="#customerInformationExistingCustomerListener" selected="true" text="Existing Customer">
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="customerInformationToggleGroup" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton fx:id="renterInfoNewCustomerRadioButton" mnemonicParsing="false" onAction="#customerInformationNewCustomerListener" text="New Customer" toggleGroup="$customerInformationToggleGroup" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </Group>
+                                                <Label fx:id="customerInformationEmailLabel" text="E-Mail" visible="false">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font></Label>
+                                                <TextField fx:id="renterInfoEmailTextField" maxWidth="-Infinity" prefWidth="250.0" visible="false" />
+                                                <Button fx:id="renterInfoSubmitButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#renterInfoSubmitButtonListener" text="Submit" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </TitledPane>
+                            <TitledPane fx:id="confirmationTitledPane" animated="false" text="Confirmation">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <HBox layoutX="-26.0" layoutY="84.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <GridPane HBox.hgrow="ALWAYS">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Order:" GridPane.valignment="BOTTOM" />
+                                                      <ListView fx:id="confirmationOrdersListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                                         <GridPane.margin>
+                                                            <Insets />
+                                                         </GridPane.margin>
+                                                      </ListView>
+                                                      <Label text="Total Items:" GridPane.rowIndex="2" />
+                                                      <Label fx:id="confirmationTotalItemsLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label text="Due Date for all Items:" GridPane.rowIndex="3" />
+                                                      <Label fx:id="confirmationDueDateLabel" text="1/1/01" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                   </children>
+                                                </GridPane>
+                                                <GridPane hgap="10.0" HBox.hgrow="ALWAYS">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Customer Information" underline="true" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                                                         <font>
+                                                            <Font size="28.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Name:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                                      <Label text="Address:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                                      <Label text="Phone:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                                      <Label text="Email:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                                                      <Button fx:id="confirmationPlaceOrderButton" mnemonicParsing="false" onAction="#confirmationPlaceOrderButtonListener" text="Place Order" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <Label fx:id="confimationCustomerNameLabel" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <Label fx:id="confimationCustomerAddressLabel" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label fx:id="confimationCustomerPhoneLabel" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label fx:id="confimationCustomerEmailLabel" text="Empty" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
+                              </content>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Manage Borrowers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+            <Tab text="Add Music">
+               <content>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Label text="Add Music">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <GridPane hgap="10.0">
+                           <children>
+                              <Label text="Add Folder">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <HBox GridPane.columnIndex="1">
+                                 <children>
+                                    <Button fx:id="addMusicBrowseFolder" mnemonicParsing="false" onAction="#addMusicFolder" prefWidth="55.0" text="Browse" GridPane.columnIndex="1" />
+                                    <TextField prefWidth="250.0" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Add Movie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <FlowPane layoutX="118.0" layoutY="76.0" prefHeight="575.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane hgap="10.0" prefHeight="150.0" prefWidth="329.0">
+                                 <children>
+                                    <Label text="Title" GridPane.rowIndex="1" />
+                                    <Label text="Year" GridPane.rowIndex="2" />
+                                    <TextField fx:id="addMovieTitleTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="addMovieYearTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Button fx:id="addMovieSubmitButton" mnemonicParsing="false" onAction="#addMovieSubmitButtonListener" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="Add Movie" underline="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                                       <font>
+                                          <Font size="28.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="155.0" minWidth="10.0" prefWidth="68.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="251.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </FlowPane.margin>
+                              </GridPane>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
